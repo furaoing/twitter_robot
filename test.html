@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script>
+        /*
+        function test_injection(){
+            alert("Injection Succeed !");
+        }
+        */
+
+        $(document).ready(function(){
+  $("#abc").click(function(){
+    alert("Click Simulation Succeed !");
+  });
+
+
+                var tweet_box = document.getElementById("tweet-box-template");
+                 var span = tweet_box.firstElementChild.firstElementChild;
+
+            var test0 = function(){
+                span = span.nextElementSibling;
+                span.innerHTML = "aaaa"
+            };
+
+
+            var test1 = function(){
+                span = span.nextElementSibling;
+                span.innerHTML = "aaaa"
+            };
+
+            test0();
+            test1();
+
+});
+
+
+
+    </script>
+</head>
+<body>
+<div id="tweet-box-template">
+    <div id="element_node">
+        <span>One</span>
+       <span>Two</span>
+        <span>Three</span>
+    </div>
+</div>
+<button id="abc" class="js-tooltip js-dynamic-tooltip global-dm-nav" type="button">Click Me!</button>
+</body>
+</html>
